@@ -1,7 +1,7 @@
 # Reconhecimento de dígitos
 
 TODO replace image by a diagram
-![Captura de Tela 2023-07-27 à(s) 10 44 56](https://github.com/joaofelipesus/digits-classification/assets/9594670/9e40c85b-b32b-4006-acfb-7e17dcf3f58a)
+![Arquitetura](./docs/arc.png)
 
 
 ## Aplicação (TODO)
@@ -12,12 +12,12 @@ Módulo que contém os códigos utilizados durante a investigação e modelagem 
 #### Modelo de classificação
 O modelo utilizado na classificação dos dígitos é um `MLP` com duas camadas ocultas que segue a seguinte arquitetura.
 
-| Camada    | Parâmetros                                                         | 
+| Camada    | Parâmetros                                                         |
 |-----------|--------------------------------------------------------------------|
 | Entrada   | input_shape=(28,28)                                                |
 | Dense (1) | units=256, activation='relu', kernel_initializer=RandomNormal()    |
 | Dense (2) | units=128, activation='sigmoid', kernel_initializer=RandomNormal() |
-| Saída     | units=10, activation='softmax'                                        
+| Saída     | units=10, activation='softmax'
 
 Os hiperparâmetros utilizados foram:
   - `epochs`: 50;
