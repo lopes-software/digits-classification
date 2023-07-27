@@ -35,10 +35,9 @@ Os hiperparâmetros utilizados foram:
 ## Setup (TODO)
   - `classification engine`:
 
-- Notes:
+## Notes:
 
-
-- TODO:
+## TODO:
   - [ ] Add readme classification-engine;
-  - [ ] Improve notebook cells;
-  - [ ] Describe dataset_extractor.py script.
+  - [ ] Describe scripts on classification engine module;
+  - [ ] Add flask api that loads pre-trained model and return a image class.
