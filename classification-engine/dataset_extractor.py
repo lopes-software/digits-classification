@@ -20,7 +20,7 @@ def build_dataset(images_with_labels):
   dataset = []
 
   for key in images_with_labels.keys():
-    image_path = f'../digits/train/{key}'
+    image_path = f'{DATASET_PATH}/{key}'
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE) # load image on grayscale
     normalized_image = image.flatten() / 255.0           # flatten and normalize values
     features = normalized_image.tolist()                 # convert into a list
@@ -35,13 +35,14 @@ def build_dataset(images_with_labels):
 
 
 # NOTE: base file name
-LABELS_FILE_PATH = '../digits/train.txt'
-OUTPUT_FILE_PATH = '../digits/train.csv'
+DATASET_PATH = '../digits/val'
+LABELS_FILE_PATH = '../digits/val.txt'
+OUTPUT_FILE_PATH = '../digits/val.csv'
 
 
 images_with_labels = load_images_and_labels()
 dataset = build_dataset(images_with_labels)
 print('Saving CSV file ...')
 dataframe = pd.DataFrame(data=dataset)
-dataframe.to_csv(f'{OUTPUT_FILE_PATH}')
+dataframe.to_csv(f'{OUTPUT_FILE_PATH}', header=None, index=None)
 print('Saving CSV file [OK]')
