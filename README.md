@@ -32,13 +32,16 @@ Os hiperparâmetros utilizados foram:
 | teste     | 0.979    | 0.124 |
 | validação | 0.989    | 0.06  |
 
+---
+
 ## Classification API
 
+(melhorar descrição)
 Api desenvolvida em Flask que retorna a classe e as probabilidades para um conjunto de valores.
 
 ### Rotas
 
-  - POST classify_digit
+  - POST `/classify_digit`
     - recebe parâmetro image contendo um array com 4096 posições com os valores de cada um dos pixels de uma imagem de dígito e retorna a classe e o conjunto de probabilidades para cada uma das classes possíveis;
     - exemplo de response:
     ```JSON
@@ -63,6 +66,8 @@ Api desenvolvida em Flask que retorna a classe e as probabilidades para um conju
   - adicionar cobertura de testes;
   - adicionar Readme.MD ao módulo da api;
   - validar erro relacionado ao estouro de momória relativo ao keras.
+
+---
 
 ## Setup (TODO)
   - `classification engine`:
