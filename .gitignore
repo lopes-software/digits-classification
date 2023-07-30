@@ -1,2 +1,6 @@
 classification-engine/*.csv
 digits/*.csv
+
+classification-api/bin
+classification-api/lib
+classification-api/pyvenv.cfg
