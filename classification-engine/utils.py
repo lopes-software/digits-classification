@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from keras.utils import to_categorical
 
 # Loads image labels file and returns an Map with its related values.
 #
@@ -27,7 +28,8 @@ def load_image_paths_and_labels(labels_file_path):
 # @param images_with_labels [Map]: map where keys are image file name and values are image label.
 # @param images_base_path [String]: path to directory with images.
 #
-# @returns: an numpy array with normalized images and an second array with respective labels.
+# @returns: an numpy array with normalized images and an second array with respective categoical
+#   labels.
 def load_images_and_labels(images_with_labels, images_base_path):
   labels = []
   images = []
@@ -43,5 +45,6 @@ def load_images_and_labels(images_with_labels, images_base_path):
   print()
   numpy_images = np.array(images, np.uint8)
   numpy_images = numpy_images.reshape(-1, 64 * 64)
+  categorical_labels = to_categorical(labels)
 
-  return numpy_images, labels
+  return numpy_images, categorical_labels
